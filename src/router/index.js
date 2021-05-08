@@ -54,101 +54,84 @@ export const constantRoutes = [
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
-
   {
-    path: '/example',
+    path: '/goods',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
+    redirect: '/goods/edit',
+    name: '商品信息',
+    meta: { title: '商品信息', icon: 'el-icon-goods' },
+    children: [{
+      path: 'edit',
+      name: 'GoodsEdit',
+      component: () => import('@/views/Goods/goodsEdit'),
+      meta: { title: '商品修改', icon: 'el-icon-goods' }
+    }]
   },
-
   {
-    path: '/form',
+    path: '/account',
     component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
+    redirect: '/account/edit',
+    name: '账号管理',
+    meta: { title: '账号管理', icon: 'el-icon-s-custom' },
+    children: [{
+      path: 'edit',
+      name: 'accountEdit',
+      component: () => import('@/views/Account'),
+      meta: { title: '账号修改', icon: 'el-icon-s-custom' }
+    }]
   },
-
   {
-    path: '/nested',
+    path: '/swipper',
     component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
-      },
-      {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
-      }
-    ]
+    redirect: '/swipper/edit',
+    name: '轮播图管理',
+    meta: { title: '轮播图管理', icon: 'el-icon-film' },
+    children: [{
+      path: 'edit',
+      name: 'swipperEdit',
+      component: () => import('@/views/Swipper/Swipper'),
+      meta: { title: '账号修改', icon: 'el-icon-data-board' }
+    }]
   },
-
+  {
+    path: '/hot',
+    component: Layout,
+    redirect: '/hot/edit',
+    name: '热销商品配置',
+    meta: { title: '热销商品配置', icon: 'el-icon-film' },
+    children: [{
+      path: 'edit',
+      name: 'hot',
+      component: () => import('@/views/index/IndexConfig'),
+      meta: { title: '热销商品配置', icon: 'el-icon-sold-out' }
+    }]
+  },
+  {
+    path: '/new',
+    component: Layout,
+    redirect: '/new/edit',
+    name: '新商品配置',
+    meta: { title: '新商品配置', icon: 'el-icon-film' },
+    children: [{
+      path: 'edit',
+      name: 'new',
+      component: () => import('@/views/index/IndexConfig'),
+      meta: { title: '新商品配置', icon: 'el-icon-sell' }
+    }]
+  },
+  {
+    path: '/recommend',
+    component: Layout,
+    redirect: '/recommend/edit',
+    name: '推荐商品配置',
+    meta: { title: '推荐商品配置', icon: 'el-icon-film' },
+    children: [{
+      path: 'edit',
+      name: 'recommend',
+      component: () => import('@/views/index/IndexConfig'),
+      meta: { title: '推荐商品配置', icon: 'el-icon-shopping-bag-1' }
+    }]
+  },
   {
     path: 'external-link',
     component: Layout,
